@@ -21,13 +21,14 @@ public class CharacterMovement : MonoBehaviour
     void Update()
     {
         float dirX = Input.GetAxisRaw("Horizontal");
+        float dirY = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = new Vector2(dirX * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(dirX * moveSpeed, dirY * moveSpeed);
 
-        if (Input.GetKey(KeyCode.Space))
+        /*if (Input.GetKey(KeyCode.Space))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpSpeed);
-        }
+        }*/
 
     }
 }
